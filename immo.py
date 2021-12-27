@@ -93,14 +93,14 @@ def mapplot(df):
     import folium
     from folium import plugins
     map1 = folium.Map(
-        location=[48.8464112,2.3324234],
+        location=[48.653769,-2.0058249],
         tiles='cartodbpositron',
         zoom_start=12,
     )
     for index, row in df.iterrows():
         folium.Marker([row['latitude'], row['longitude']], 
-        popup=row['adresse_nom_voie']+" "+str(row['valeur_fonciere'])+" € / "+str(row['surface_reelle_bati'])+" m2",
-        tooltip=str(row['prixm2'])+" € / m²",
+        popup=row['type_local']+" "+str(row['date_mutation'])+" "+str(row['adresse_nom_voie'])+" "+str(row['valeur_fonciere'])+" euros / "+str(row['surface_reelle_bati'])+" m2",
+        tooltip=str(row['prixm2']),
         icon=plugins.BeautifyIcon(number=index,
                                                 border_color=row['marker_color'],
                                                 # border_width=1,
