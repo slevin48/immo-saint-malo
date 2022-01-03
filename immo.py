@@ -93,7 +93,7 @@ def mapplot(df):
     import folium
     from folium import plugins
     map1 = folium.Map(
-        location=[48.653769,-2.0058249],
+        location=[df['latitude'].iloc[0], df['longitude'].iloc[0]],
         tiles='cartodbpositron',
         zoom_start=12,
     )

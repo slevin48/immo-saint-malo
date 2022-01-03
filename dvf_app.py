@@ -1,12 +1,15 @@
 import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_folium import folium_static
-import folium
+# import folium
 import pandas as pd
 import matplotlib.pyplot as plt
 import datetime
 import immo
-import requests as rq
+
+import ssl
+# to avoid SSLCertVerificationError
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # search from data.gouv.fr geo-dvf
 @st.cache
